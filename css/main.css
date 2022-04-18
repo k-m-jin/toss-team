@@ -1,0 +1,84 @@
+/* COMMON */
+
+img {
+  display: block;
+}
+
+a {
+ text-decoration: none;
+}
+.inner{
+  width: 1140px;
+}
+/* HEADER */
+header {
+  background-color: transparent;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  /* backdrop-filter: blur(30px); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header .inner {
+  background-color: grey;
+  width: 1140px;
+  margin: auto;
+}
+header .inner .navbar{
+  display: flex;
+  align-items: center;
+}
+header .navbar .nav_logo{
+  width: 50%;
+  
+}
+header .navbar .nav_logo img{
+  
+  width: 78px;
+  height: auto;
+  
+}
+header .inner .navbar .nav_menu{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  font-size: 15px;
+  
+}
+header .inner .navbar .nav_menu_item{
+  display: flex;
+  padding: 12px 10px;
+}
+header .inner .navbar .nav_menu a{
+  padding: 12px 10x;
+  cursor: pointer;
+  color: #FFF;
+}
+
+/* main */
+.main_container {
+  background-image: url(https://static.toss.im/assets/homepage/team/kv-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+}
+.main_container .inner{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+}
+.main_container .main_title {
+  font-size: 72px;
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 93.6px;
+  color: #ffffff;
+  letter-spacing: normal;
+  text-align: center;
+}
