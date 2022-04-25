@@ -414,7 +414,6 @@ header .inner .navbar .nav_menu a {
 }
 
 /* histtory text */
-.history__container .history__text {}
 
 .history__container .history__text .texts {
   display: none;
@@ -427,6 +426,10 @@ header .inner .navbar .nav_menu a {
   color: rgb(255, 255, 255);
   list-style: none;
   /* 트랜지션 트랜스폼 줘야함 */
+}
+
+.history__container .history__text .texts:nth-child(1) {
+  display: block;
 }
 
 .history__container .history__text h3 {
@@ -447,6 +450,7 @@ header .inner .navbar .nav_menu a {
   color: rgb(242, 244, 246);
   white-space: pre-wrap;
 }
+
 
 /* CARD */
 .card__container {
@@ -485,6 +489,9 @@ header .inner .navbar .nav_menu a {
 }
 
 .card__container .cards__box {
+  /* 1을 주면 이미지가 보임 */
+  z-index: 1;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 960px;
@@ -495,8 +502,9 @@ header .inner .navbar .nav_menu a {
   width: 458px;
   height: 523px;
   margin: 14px 0;
-  border: 1px solid red;
+  background-color: transparent;
 }
+
 .card__container .cards__box .card .card__inner {
   position: relative;
   width: 100%;
@@ -506,10 +514,115 @@ header .inner .navbar .nav_menu a {
   cursor: pointer;
   border-radius: 16px;
   box-sizing: border-box;
-  border: 1px solid red;
+  background-color: transparent;
+}
+
+.card .card__imagebox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-radius: 16px;
+  background-color: #17171c;
+ 
+}
+.card:nth-child(1) .card__imagebox{ background-image: url(https://static.toss.im/assets/homepage/team/team-1core.jpg);}
+.card:nth-child(2) .card__imagebox{ background-image: url(https://static.toss.im/assets/homepage/team/team-2securities.jpg);}
+.card:nth-child(3) .card__imagebox{ background-image:url(https://static.toss.im/assets/homepage/team/team-3payments.jpg);}
+.card:nth-child(4) .card__imagebox{ background-image: url(https://static.toss.im/assets/homepage/team/team-4insu.jpg);}
+.card:nth-child(5) .card__imagebox{ background-image: url(https://static.toss.im/assets/homepage/team/team-5bank.jpg);}
+.card:nth-child(6) .card__imagebox{ background-image: url(https://static.toss.im/assets/homepage/team/team-6cx.jpg);}
+.card .card__top {
+  height: 24px;
+  margin: 0 0 8px 0;
+  overflow-y: hidden;
+  font-size: 15px;
+  line-height: 24px;
+  color: #4e5968;
+  opacity: 1;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.card .card__title {
+  margin: 0 0 20px 0;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 41px;
+  color: #333d4b;
+  transition: font-size 0.3s ease, line-height 0.3s ease;
+}
+
+.card .card__plus-icon {
+  height: 24px;
+  transition: height 0.3s ease,opacity 0.3s ease;
 
 }
-.card__container .cards__box .card .card__inner .card__imagebox {
-  position: relative;
-  background-image: url(https://static.toss.im/assets/homepage/team/team-1core.jpg);
+
+.card .card__body {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333d4b;
+  letter-spacing: -0.1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card .card__link{
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+  color: #3182f6;
+  opacity: 0;
+  transition: font-size 0.3s ease, line-height 0.3s ease;
+}
+.card a {
+  color: #007bff;
+}
+
+.card .card__close {
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 35px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* card--focus */
+.card.--focus .card__imagebox{
+  filter: blur(30px);
+  transform: scale(1.2);
+}
+.card.--focus .card__top{
+  height: 0px;
+  opacity: 0;
+}
+.card.--focus .card__title{
+  margin: 0 0 15px 0;
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 1.35em;
+  color: #333d4b;
+  white-space: pre-line;
+  transition: font-size 0.3s ease, line-height 0.3s ease;
+}
+.card.--focus .card__plus-icon{
+  height: 0px;
+  opacity: 0;
+
+}
+.card.--focus .card__body,
+.card.--focus .card__link{
+  display: block;
+  opacity: 1;
+}
+.card.--focus .card__close{
+  opacity: 1;
 }

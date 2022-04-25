@@ -3,17 +3,17 @@ console.log('hello')
 // 해더 필더
 const headerEl = document.querySelector('header');
 
-window.addEventListener('scroll',_.throttle(function(){
-  if(window.scrollY>10){
+window.addEventListener('scroll', _.throttle(function () {
+  if (window.scrollY > 10) {
     headerEl.classList.add('dark')
-  // }else if(window.scrollY>500){
-  //   headerEl.classList.remove('dark')
-  //    headerEl.classList.add('white')
-    
-  }else{
+    // }else if(window.scrollY>500){
+    //   headerEl.classList.remove('dark')
+    //    headerEl.classList.add('white')
+
+  } else {
     headerEl.classList.remove('dark')
   }
-},100));
+}, 100));
 
 // const ulEl = document.querySelector('.history')
 
@@ -23,31 +23,37 @@ window.addEventListener('scroll',_.throttle(function(){
 //   ulEl.appendChild(liEl)
 // }
 
-const yearsEl = document.querySelectorAll('.years');
-const textsEl = document.querySelectorAll('.texts')
-for (const yearEl of yearsEl){
-  yearEl.addEventListener('click',function(){
+
+//History
+const yearEls = document.querySelectorAll('.years');
+const textEls = document.querySelectorAll('.texts')
+for (const yearEl of yearEls) {
+  yearEl.addEventListener('click', function () {
     const thisYear = this.dataset.year;
-    for (const yearElClass of yearsEl){
+    for (const yearElClass of yearEls) {
       //activ 초기화
       yearElClass.classList.remove('active');
     }
-    
     this.classList.add('active');
     console.log(thisYear);
-    for(const textEl of textsEl){
+    //history text 
+    for (const textEl of textEls) {
       const textYear = textEl.dataset.year;
-      if(textYear === thisYear){
+      if (textYear === thisYear) {
         textEl.style.display = 'block';
-      }else{
+      } else {
         textEl.style.display = 'none';
       }
     }
   })
 }
 
-
-
+const cardEls = document.querySelectorAll('.card');
+for (let i = 0; i < cardEls.length; i += 1) {
+  cardEls[i].addEventListener('click', function () {
+    cardEls[i].classList.toggle('--focus')
+  })
+}
 
 // document.querySelector(".submitBtn").addEventListener("click", function(){
 //   var 사용자가입력한값 = document.querySelector(".target").value;
@@ -55,5 +61,5 @@ for (const yearEl of yearsEl){
 //        alert("공백 입력 ㄴㄴ")
 //   } else {
 //        console.log(사용자가입력한값)
-//   }
+//   } 
 // })
