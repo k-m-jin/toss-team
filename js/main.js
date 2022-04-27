@@ -1,28 +1,15 @@
 console.log('hello')
 
-// 해더 필더
+// header
 const headerEl = document.querySelector('header');
-
 window.addEventListener('scroll', _.throttle(function () {
-  if (window.scrollY > 10) {
+  console.log(window.scrollY)
+  if (window.scrollY > 1) {
     headerEl.classList.add('dark')
-    // }else if(window.scrollY>500){
-    //   headerEl.classList.remove('dark')
-    //    headerEl.classList.add('white')
-
   } else {
     headerEl.classList.remove('dark')
   }
 }, 100));
-
-// const ulEl = document.querySelector('.history')
-
-// for (let i =0; i<9; i +=1 ){
-//   const liEl = document.createElement('li')
-//   liEl.textContent = i
-//   ulEl.appendChild(liEl)
-// }
-
 
 //History
 const yearEls = document.querySelectorAll('.years');
@@ -48,18 +35,10 @@ for (const yearEl of yearEls) {
   })
 }
 
+//card
 const cardEls = document.querySelectorAll('.card');
 for (let i = 0; i < cardEls.length; i += 1) {
   cardEls[i].addEventListener('click', function () {
     cardEls[i].classList.toggle('--focus')
   })
 }
-
-// document.querySelector(".submitBtn").addEventListener("click", function(){
-//   var 사용자가입력한값 = document.querySelector(".target").value;
-//   if(!사용자가입력한값.trim()){
-//        alert("공백 입력 ㄴㄴ")
-//   } else {
-//        console.log(사용자가입력한값)
-//   } 
-// })

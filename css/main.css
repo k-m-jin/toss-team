@@ -101,6 +101,7 @@ header.dark {
 }
 
 header.white {
+  background-color: #fff;
   color: #4e5968
 }
 
@@ -138,14 +139,28 @@ header .inner .navbar .nav_menu {
 }
 
 header .navbar .nav_menu_item {
+  height: 100%;
+  list-style: none;
   display: flex;
-  padding: 12px 10x;
-  margin: 10px;
-  cursor: pointer;
+  align-items: center;
+  padding: 0 8px;
 }
 
-header .inner .navbar .nav_menu a {
+header .nav_menu .nav_menu_item a {
   color: #FFF;
+  padding: 12px 10px;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: left;
+}
+
+header .nav_menu .nav_menu_item a:hover {
+  background-color: rgba(217, 217, 255, .11);
 }
 
 /* main */
@@ -199,9 +214,6 @@ header .inner .navbar .nav_menu a {
   background-color: #17171c;
   height: 100vh;
 }
-
-.graph_container .inner {}
-
 .graph_container .message {
   /* margin: 50px; */
   box-sizing: content-box;
@@ -257,9 +269,6 @@ header .inner .navbar .nav_menu a {
   justify-content: center;
   align-items: center;
 }
-
-.mission__container .inner {}
-
 .mission__container .mission__message {
   position: absolute;
   right: 0;
@@ -305,9 +314,6 @@ header .inner .navbar .nav_menu a {
   height: 100vh;
   color: #FFF;
 }
-
-.history__container .inner {}
-
 .history__container .title {
   display: block;
   margin-bottom: 82px;
@@ -327,21 +333,16 @@ header .inner .navbar .nav_menu a {
   margin: 0 auto;
   width: 500px;
   padding-left: 50px;
-
 }
-
 .history__container .history__timeline {
   list-style: none;
-
 }
-
 .history__container .history__timeline .years {
   position: relative;
   height: 75px;
   cursor: pointer;
   border-left: 2px solid rgb(51, 61, 75);
 }
-
 .history__container .history__timeline .years::before {
   position: absolute;
   top: -10px;
@@ -354,43 +355,33 @@ header .inner .navbar .nav_menu a {
   color: rgb(78, 89, 104);
   text-align: right;
 }
-
 .history__container .history__timeline .years:nth-child(1)::before {
   content: '2021'
 }
-
 .history__container .history__timeline .years:nth-child(2)::before {
   content: '2020'
 }
-
 .history__container .history__timeline .years:nth-child(3)::before {
   content: '2019'
 }
-
 .history__container .history__timeline .years:nth-child(4)::before {
   content: '2018'
 }
-
 .history__container .history__timeline .years:nth-child(5)::before {
   content: '2017'
 }
-
 .history__container .history__timeline .years:nth-child(6)::before {
   content: '2016'
 }
-
 .history__container .history__timeline .years:nth-child(7)::before {
   content: '2015'
 }
-
 .history__container .history__timeline .years:nth-child(8)::before {
   content: '2014'
 }
-
 .history__container .history__timeline .years:nth-child(9)::before {
   content: '2013'
 }
-
 
 .history__container .history__timeline .years::after {
   position: absolute;
@@ -604,7 +595,6 @@ header .inner .navbar .nav_menu a {
 .card a {
   color: #007bff;
 }
-
 .card .card__close {
   position: absolute;
   bottom: 0;
@@ -620,12 +610,10 @@ header .inner .navbar .nav_menu a {
   filter: blur(30px);
   transform: scale(1.2);
 }
-
 .card.--focus .card__top {
   height: 0px;
   opacity: 0;
 }
-
 .card.--focus .card__title {
   margin: 0 0 15px 0;
   font-size: 27px;
@@ -635,19 +623,15 @@ header .inner .navbar .nav_menu a {
   white-space: pre-line;
   transition: font-size 0.3s ease, line-height 0.3s ease;
 }
-
 .card.--focus .card__plus-icon {
   height: 0px;
   opacity: 0;
-
 }
-
 .card.--focus .card__body,
 .card.--focus .card__link {
   display: block;
   opacity: 1;
 }
-
 .card.--focus .card__close {
   opacity: 1;
 }
@@ -682,7 +666,7 @@ header .inner .navbar .nav_menu a {
 }
 
 .footer__container .site-group-list .site-group {
-  width: 170px;
+  width: 270px;
   margin: 0;
   padding: 0;
   color: #6b7684;
@@ -691,7 +675,6 @@ header .inner .navbar .nav_menu a {
   line-height: 30px;
   box-sizing: border-box;
 }
-
 .footer__container .site-group-list .site-group-title {
   padding-bottom: 5px;
   color: #333d4b;
@@ -755,6 +738,7 @@ header .inner .navbar .nav_menu a {
   transition: opacity .2s ease;
   opacity: .7;
 }
+
 .footer__container .social-list .social-list-item>a:hover {
   opacity: 1;
 }
